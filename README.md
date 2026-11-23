@@ -1,7 +1,4 @@
-# SparkFly-Shop
-Tienda en línea Full Stack desarrollada con Java, Spring Boot y frontend en HTML, CSS y JavaScript para gestión de catálogo de productos.
 # SparkFlyShop 🎆
-
 Aplicación web Full Stack desarrollada con **Spring Boot** (Java) y frontend en **HTML, CSS y JavaScript** para la gestión de catálogo de productos temáticos.
 
 ## Estructura del Proyecto
