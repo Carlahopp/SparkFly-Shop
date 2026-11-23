@@ -1,0 +1,29 @@
+### 1. Obtener todos los productos
+GET http://localhost:8080/api/products
+
+### 2. Obtener solo productos disponibles (stock > 0)
+GET http://localhost:8080/api/products/available
+
+### 3. Agregar un producto nuevo con stock
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Speak Now Tour Hoodie",
+  "category": "Apparel",
+  "price": 750.00,
+  "stock": 14
+}
+
+### 4. Agregar un producto agotado (stock = 0)
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "The Sky is Opalite Jacket",
+  "category": "Outerwear",
+  "price": 850.00,
+  "stock": 0
+}
