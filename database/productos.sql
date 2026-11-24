@@ -17,3 +17,17 @@ INSERT INTO productos (nombre, descripcion, precio, stock, imagen_url, id_catego
 ('The Eras Tour Reusable Tote Bag', 'Bolsa ecológica reutilizable The Eras Tour', 349.00, 18, 'img/eras-tote.jpg', 6);
 SELECT * FROM productos;
 SELECT * FROM productos;
+SELECT * FROM productos;
+USE sparkfly_shop;
+
+UPDATE productos 
+SET imagen_url = 'img/speak-now-hoodie.jpg',
+    descripcion = 'Sudadera oficial Speak Now Tour (From the Vault)'
+WHERE id_producto = 7;
+
+UPDATE productos 
+SET imagen_url = 'img/opalite-jacket.jpg',
+    descripcion = 'Chamarra deportiva The sky is opalite'
+WHERE id_producto = 8;
+
+SELECT id_producto, nombre, imagen_url FROM productos;

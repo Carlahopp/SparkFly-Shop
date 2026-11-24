@@ -35,7 +35,7 @@ function renderProducts(products) {
 
         card.innerHTML = `
             <div>
-                <img src="${imgSrc}" alt="${product.name}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+                <img src="${imgSrc}" alt="${product.name}" style="width: 100%; height: 160px; object-fit: contain; border-radius: 8px; margin-bottom: 10px;">
                 <span class="badge">${categoryName}</span>
                 <h3>${product.name}</h3>
                 <p style="font-size: 0.9rem; color: #555;">${descText}</p>
