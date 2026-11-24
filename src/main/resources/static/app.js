@@ -29,11 +29,16 @@ function renderProducts(products) {
 
         const isOutOfStock = product.stock === 0;
         const stockText = isOutOfStock ? 'Agotado' : `Stock: ${product.stock} unidades`;
+        const categoryName = product.category ? product.category.nombreCategoria : 'Sin categoría';
+        const imgSrc = product.imageUrl || 'img/default.jpg';
+        const descText = product.description || 'Sin descripción disponible.';
 
         card.innerHTML = `
             <div>
-                <span class="badge">${product.category}</span>
+                <img src="${imgSrc}" alt="${product.name}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+                <span class="badge">${categoryName}</span>
                 <h3>${product.name}</h3>
+                <p style="font-size: 0.9rem; color: #555;">${descText}</p>
             </div>
             <div>
                 <p class="price">$${product.price.toFixed(2)}</p>
@@ -47,12 +52,17 @@ function renderProducts(products) {
 productForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const categoryInput = document.getElementById('category').value.trim();
+
     const newProduct = {
-        id: 0,
         name: document.getElementById('name').value.trim(),
-        category: document.getElementById('category').value.trim(),
+        description: document.getElementById('description').value.trim(),
+        category: {
+            nombreCategoria: categoryInput
+        },
         price: parseFloat(document.getElementById('price').value),
-        stock: parseInt(document.getElementById('stock').value, 10)
+        stock: parseInt(document.getElementById('stock').value, 10),
+        imageUrl: document.getElementById('imageUrl').value.trim() || 'img/default.jpg'
     };
 
     try {
